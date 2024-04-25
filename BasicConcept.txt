@@ -1,0 +1,34 @@
+Diff b/w DOM & Virtual DOM
+
+npx create-react-app projectname
+Steps to follow For creating React Project using Vite
+vite
+npm create vite
+mention Project name
+reactjs
+javascript 
+
+cd - folder change
+npm install
+npm run dev
+
+class parent{
+	abc(){
+		LOG("HELLO");
+	}
+
+}
+
+CLASS Child extends parent
+{
+	abc(){
+		super.abc();
+		log("Hi");
+	}
+
+}
+
+let obj = new child();
+obj.abc();
+
+
