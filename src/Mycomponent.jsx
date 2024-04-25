@@ -1,4 +1,4 @@
-const Mycomponent = ()=>{
+const Mycomponent = (props)=>{
     let name = "Rinkal";
     let arr = [10,20,30,40];
     let obj = {
@@ -23,7 +23,7 @@ const Mycomponent = ()=>{
     })
     return (
         <>
-            <h3>My Name is {obj.name} -- {obj['age']}</h3>
+            <h3>My Name is {props.myname}</h3>
             <h4>Array is : {e} -- {arr_obj[0].name}</h4>
         </>
     )
