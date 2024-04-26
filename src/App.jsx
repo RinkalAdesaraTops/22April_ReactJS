@@ -6,7 +6,9 @@ import Mycomponent from './Mycomponent'
 import MyClassComponent from './MyClassComponent'
 
 function App() {
-  
+  let userobj = {
+    
+  }
   return (
     <><div>
       <h1>Hello </h1>
