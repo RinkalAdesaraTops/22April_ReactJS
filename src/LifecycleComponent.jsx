@@ -15,8 +15,7 @@ export default class LifecycleComponent extends Component {
             this.setState({
                 rollno:102
             })
-        },3000)
-        
+        },3000)      
     }
     static getDerivedStateFromProps(props,state){
         console.log("props value "+props.course);
