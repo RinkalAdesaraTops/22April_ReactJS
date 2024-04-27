@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Mycomponent from './Mycomponent'
 import MyClassComponent from './MyClassComponent'
+import LifecycleComponent from './LifecycleComponent'
 
 function App() {
   let userobj = {
@@ -12,7 +13,8 @@ function App() {
   return (
     <><div>
       <h1>Hello </h1>
-      <MyClassComponent userdata="testingdata"/>
+      {/* <MyClassComponent userdata="testingdata"/> */}
+      <LifecycleComponent course="MernStack"/>
       {/* <Mycomponent myname="testing"/> */}
     </div>
     </>
