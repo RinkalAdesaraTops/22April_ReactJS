@@ -5,9 +5,7 @@ import './App.css'
 import Mycomponent from './Mycomponent'
 import MyClassComponent from './MyClassComponent'
 import LifecycleComponent from './LifecycleComponent'
-import { BrowserRouter, Route,Routes } from 'react-router-dom'
-import Home from './Home'   
-import Layout from './Layout'
+import { FunctionComponent } from './FunctionComponent'
 
 function App() {
   let userobj = {
@@ -19,13 +17,7 @@ function App() {
       {/* <MyClassComponent userdata="testingdata"/> */}
       {/* <LifecycleComponent course="MernStack"/> */}
       {/* <Mycomponent myname="testing"/> */}
-      <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route  path="/home" element={<Home />}>Home</Route>
-        </Route>
-      </Routes>
-      </BrowserRouter>
+     <FunctionComponent />
     </div>
     </>
   )
