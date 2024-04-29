@@ -6,7 +6,8 @@ export default class LifecycleComponent extends Component {
         this.state = {
             rollno:101,
             st_name:"Abc",
-            course:"Fullstack"
+            course:"Fullstack",
+            counter:0
         }
     }
     componentDidMount(){
@@ -34,9 +35,12 @@ export default class LifecycleComponent extends Component {
     return (
         <>
             <div>LifecycleComponent</div>
+
+            <h3>Counter is  - {this.state.counter}</h3>
             <h3>Roll No is - {this.state.rollno}</h3>
             <h3>Course Name is - {this.state.course}</h3>
             <button onClick={()=>this.setState({course:"FrontEnd"})}>Click</button>
+            <button onClick={()=>this.setState({counter:this.state.counter+1})}>Counter Click</button>
         </>
     )
   }
