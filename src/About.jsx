@@ -1,7 +1,11 @@
 import React from 'react'
+import { Button } from 'react-bootstrap';
 
-export default function About() {
+export const About = () => {
   return (
-    <div>About Page</div>
+    <>
+    <div>About Us Page</div>
+    <Button className='btn btn-primary'>Click</Button>
+    </>
   )
 }

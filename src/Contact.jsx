@@ -5,3 +5,11 @@ export default function Contact() {
     <div>Contact Page</div>
   )
 }
+
+import React from 'react'   
+
+export const Contact = () => {
+  return (
+    <div>Contact Us Page</div>
+  )
+}
