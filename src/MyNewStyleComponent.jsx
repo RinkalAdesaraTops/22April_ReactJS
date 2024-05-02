@@ -7,7 +7,7 @@ const MyNewStyleComponent = () => {
             `
   return (
     <div>
-      <H1 red>My Styled Component</H1>
+      <H1>My Styled Component</H1>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt enim earum sint asperiores quo exercitationem vero eius laudantium aspernatur et! Corporis eveniet earum porro id totam. Quos dolorum obcaecati explicabo.</p>
       <button>Click</button>
     </div>
