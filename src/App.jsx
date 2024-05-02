@@ -13,6 +13,7 @@ import { About } from './About'
 import { Contact } from './Contact'
 import { Menu } from './Menu'
 
+// 2+3*4 - eval(2+3*4 )
 function App() {
   let userobj = {
     
