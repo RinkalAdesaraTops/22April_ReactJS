@@ -12,6 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { About } from './About'
 import { Contact } from './Contact'
 import { Menu } from './Menu'
+import MyNewStyleComponent from './MyNewStyleComponent'
 
 // 2+3*4 - eval(2+3*4 )
 function App() {
@@ -32,6 +33,7 @@ function App() {
           {/* <Route path="/" element={<Home />}></Route> */}
           <Route path="/about" element={<About />}></Route>
           <Route path="/contact" element={<Contact />}></Route>
+          <Route path="/style" element={<MyNewStyleComponent />}></Route>
       </Routes>
      </BrowserRouter>
     </div>
