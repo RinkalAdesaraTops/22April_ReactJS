@@ -15,6 +15,7 @@ import MyNewStyleComponent from './MyNewStyleComponent'
 import HomeComponent from './HomeComponent'
 import UseEffectExample from './UseEffectExample'
 import ApiComponent from './ApiComponent'
+import UseEffectDemo from './UseEffectDemo'
 
 // 2+3*4 - eval(2+3*4 )
 function App() {
@@ -30,18 +31,16 @@ function App() {
       {/* <LifecycleComponent course="MernStack"/> */}
       {/* <Mycomponent myname="testing"/> */}
      {/* <FunctionComponent /> */}
-     <HashRouter>
+     <BrowserRouter>
      <Menu />
-      <Routes>
-          {/* <Route path="/" element={<Home />}></Route> */}
-          <Route exact path="/" element={<HomeComponent />}></Route>
-          <Route path="/about" element={<About />}></Route>
-          <Route path="/contact" element={<Contact />}></Route>
-          <Route path="/style" element={<MyNewStyleComponent />}></Route>
-          <Route path="/counter" element={<UseEffectExample />}></Route>
-          <Route path="/api" element={<ApiComponent />}></Route>
+     <Routes>
+        <Route path='/about' element={<About/>}></Route>
+        <Route path='/contact' element={<Contact />}></Route>
+        <Route path='/home' element={<HomeComponent />}></Route>
+        <Route path='/useeffectdemo' element={<UseEffectDemo />}></Route>
+       
       </Routes>
-      </HashRouter>
+   </BrowserRouter>
     </div>
     </>
   )

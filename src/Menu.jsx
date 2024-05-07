@@ -10,12 +10,13 @@ export const Menu = () => {
      <Navbar bg="primary" data-bs-theme="dark">
         <Container>
           <Nav>
-            <Nav.Link as={Link} to="/">Home</Nav.Link>
+            <Nav.Link as={Link} to="/home">Home</Nav.Link>
             <Nav.Link as={Link} to="/about">About</Nav.Link>
             <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
             <Nav.Link as={Link} to="/style">Style</Nav.Link>
             <Nav.Link as={Link} to="/counter">Use Effect Example</Nav.Link>
             <Nav.Link as={Link} to="/api">Api Example</Nav.Link>
+            <Nav.Link as={Link} to="/useeffectdemo">Use effect New demoExample</Nav.Link>
           </Nav>
         </Container>
       </Navbar>

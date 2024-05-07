@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import ContextHook from './ContextHook';
+import Component2 from './Component2';
 
 const ApiComponent = () => {
     const [data,setData] = useState([])
@@ -6,19 +8,19 @@ const ApiComponent = () => {
         console.log("add data function called..");
         console.log(data);
     }
-    useEffect(()=>{
-        
+    useEffect(()=>{        
         fetch('https://fakestoreapi.com/products')
             .then(res=>res.json())
             .then(json=>{
                 console.log(json)
                 setData(json)
-    }
-)
+            })
     },[data])
     
   return (
     <div>
+        <ContextHook />
+        
         <button onClick={addData}>Check Data</button>
         <table>
             <tr>
