@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import ContextDemo from './ContextDemo'
+import ContextExample from './ContextExample'
+import UseContextDemo from '../../src/UseContextDemo'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,8 +24,9 @@ function App() {
         A is {a.current}
         
       </div>
-      <ContextDemo />
-      
+      {/* <ContextDemo /> */}
+      {/* <ContextExample /> */}
+      <UseContextDemo />
     </>
   )
 }

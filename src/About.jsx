@@ -1,7 +1,9 @@
 import React from 'react'
 import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 export const About = () => {
+  const navigate = useNavigate()
   const arr = [
     "abc","pqr","xyz"
   ];
@@ -24,6 +26,10 @@ export const About = () => {
       price:21000
     }
   ]
+
+  const prevPage = ()=>{
+    navigate("/home")
+  }
   return (
     <>
     <div>About Us Page</div>
@@ -31,6 +37,7 @@ export const About = () => {
     <ul>
       {listArr}
     </ul>
+    <button onClick={prevPage}>Back</button>
     </>
   )
 }
