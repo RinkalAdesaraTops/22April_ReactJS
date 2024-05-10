@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import ContextDemo from './ContextDemo'
 import ContextExample from './ContextExample'
 import UseContextDemo from '../../src/UseContextDemo'
+import UsememoExample from './UsememoExample'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,17 +18,18 @@ function App() {
   })
   return (
     <>      
-      <h1>Vite + React</h1>
-      <div className="card">
+      <h1>React Hooks Example</h1>
+      {/* <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count} 
         </button> <br />
         A is {a.current}
         
-      </div>
+      </div> */}
       {/* <ContextDemo /> */}
       {/* <ContextExample /> */}
-      <UseContextDemo />
+      {/* <UseContextDemo /> */}
+      <UsememoExample />
     </>
   )
 }
