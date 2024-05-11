@@ -5,6 +5,7 @@ import ContextDemo from './ContextDemo'
 import ContextExample from './ContextExample'
 import UseContextDemo from '../../src/UseContextDemo'
 import UsememoExample from './UsememoExample'
+import UseCallback from './UseCallback';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,7 +30,7 @@ function App() {
       {/* <ContextDemo /> */}
       {/* <ContextExample /> */}
       {/* <UseContextDemo /> */}
-      <UsememoExample />
+      <UsememoExample />     
     </>
   )
 }

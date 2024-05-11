@@ -1,35 +1,24 @@
-import React, { useMemo, useState } from 'react'
+import React, { useState } from 'react'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import "bootstrap-icons/font/bootstrap-icons.css";
+import Datalist from './Datalist';
 
-//useMemo(value) - useCallback(function)
-const UsememoExample = () => {
+const UseCallback = () => {
     const [count,setCount] = useState(0)   
     const [task,setTask] = useState("")
     const [data,setData] = useState([])
-    // const calcFunction = ({count})=>{
-    //     for(let i=0;i<1000000000;i++){
-    //         count+=1;
-    //     }
-    //     return count;
-    // }
-    // const calc = useMemo(()=>calcFunction({count}))
     const addCounter = ()=>{
         console.log("counter func called..");
         setCount(count+1)
     }
     const addTask = ()=>{
         console.log("task func called..");
-        setData((i)=>[...i,task])
+        setData((i)=>[...i,"addedd"])
         // setData((i)=>[...i,"task added"])
         setTask('')
     }
-    //arr = [1,2,3,4,5,6,78]
-    //arr.splice(2,0,45,56,67)
-    //arr.splice(2,2)
-    //arr.slice(-3,-6)
   return (
     <>
     <Container>
@@ -37,25 +26,13 @@ const UsememoExample = () => {
         <Col className='bg-primary'>
             <h6>Counter is :{count}</h6>
             <button onClick={addCounter} className='bg-warning'>Add</button>
-            {/* Calculation : {calc} */}
-            
-
         </Col>
         <Col className='bg-success'>
             <h4>Task List</h4>
-            {
-                data.map((i,index)=>{
-                    return (
-                        <>
-                            <p key={index}>{i} <i class="bi bi-pencil-square"></i> <i class="bi bi-trash"></i></p>
-                            
-                        </> 
-                    )
-                })
-            }
+            
             <input type='text' name="task" value={task} onChange={(e)=>setTask(e.target.value)}/>
             <br /><br />
-            <button onClick={addTask} className='bg-secondary'>Add Task</button>
+            <Datalist data={data} task={addTask}/>
             <br /><br />
         </Col>
       </Row>     
@@ -64,4 +41,4 @@ const UsememoExample = () => {
   )
 }
 
-export default UsememoExample
+export default UseCallback
