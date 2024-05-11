@@ -7,12 +7,13 @@ import MyClassComponent from './MyClassComponent'
 import LifecycleComponent from './LifecycleComponent'
 import {BrowserRouter, Route,Routes} from 'react-router-dom'
 import { FunctionComponent } from './FunctionComponent'
-import { BrowserRouter, Routes,Route } from 'react-router-dom'
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import {Home} from './Home'
 import { About } from './About'
-import { Contact } from './Contact'
+// import { Contact } from './Contact'
 import { Menu } from './Menu'
+import Testcomponent from './Testcomponent'
 
 function App() {
   let userobj = {
@@ -23,9 +24,10 @@ function App() {
       <BrowserRouter>
       <Menu />
       <Routes>
-          <Route path="/home" element={<Home />}></Route>
+          {/* <Route path="/home" element={<Home />}></Route> */}
           <Route path="/about" element={<About />}></Route>
-          <Route path="/contact" element={<Contact />}></Route>
+          <Route path="/test" element={<Testcomponent />}></Route>
+          {/* <Route path="/contact" element={<Contact />}></Route> */}
       </Routes>
       </BrowserRouter>
       {/* <h1>Hello </h1> */}
@@ -33,15 +35,6 @@ function App() {
       {/* <LifecycleComponent course="MernStack"/> */}
       {/* <Mycomponent myname="testing"/> */}
      {/* <FunctionComponent /> */}
-     <h3>App component called..</h3>
-     <BrowserRouter>
-     <Menu />
-      <Routes>
-          {/* <Route path="/" element={<Home />}></Route> */}
-          <Route path="/about" element={<About />}></Route>
-          <Route path="/contact" element={<Contact />}></Route>
-      </Routes>
-     </BrowserRouter>
     </div>
     </>
   )
