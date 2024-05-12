@@ -9,13 +9,14 @@ const UsememoExample = () => {
     const [count,setCount] = useState(0)   
     const [task,setTask] = useState("")
     const [data,setData] = useState([])
-    // const calcFunction = ({count})=>{
-    //     for(let i=0;i<1000000000;i++){
-    //         count+=1;
-    //     }
-    //     return count;
-    // }
-    // const calc = useMemo(()=>calcFunction({count}))
+    const calcFunction = (count)=>{
+        console.log("Calculation perform....");
+        for(let i=0;i<1000000000;i++){
+            count +=1;
+        }
+        return count;
+    }
+    const calc = useMemo(()=>calcFunction(count),[count])
     const addCounter = ()=>{
         console.log("counter func called..");
         setCount(count+1)
@@ -26,10 +27,7 @@ const UsememoExample = () => {
         // setData((i)=>[...i,"task added"])
         setTask('')
     }
-    //arr = [1,2,3,4,5,6,78]
-    //arr.splice(2,0,45,56,67)
-    //arr.splice(2,2)
-    //arr.slice(-3,-6)
+    
   return (
     <>
     <Container>
@@ -47,7 +45,7 @@ const UsememoExample = () => {
                 data.map((i,index)=>{
                     return (
                         <>
-                            <p key={index}>{i} <i class="bi bi-pencil-square"></i> <i class="bi bi-trash"></i></p>
+                            <p key={index}>{i} </p>
                             
                         </> 
                     )
@@ -57,6 +55,11 @@ const UsememoExample = () => {
             <br /><br />
             <button onClick={addTask} className='bg-secondary'>Add Task</button>
             <br /><br />
+
+        </Col>
+        <Col>
+            <h4>Expensive Calc Function</h4>
+                {calc}
         </Col>
       </Row>     
     </Container>
