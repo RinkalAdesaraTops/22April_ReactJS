@@ -1,8 +1,9 @@
-import React, { useMemo, useState } from 'react'
+import React, { useCallback, useMemo, useState } from 'react'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import "bootstrap-icons/font/bootstrap-icons.css";
+import TaskComponent from './TaskComponent';
 
 //useMemo(value) - useCallback(function)
 const UsememoExample = () => {
@@ -20,12 +21,11 @@ const UsememoExample = () => {
         console.log("counter func called..");
         setCount(count+1)
     }
-    const addTask = ()=>{
-        console.log("task func called..");
+    const addTask = useCallback(()=>{
         setData((i)=>[...i,task])
-        // setData((i)=>[...i,"task added"])
+        //setData((i)=>[...i,"task added"])
         setTask('')
-    }
+    },[task])
     //arr = [1,2,3,4,5,6,78]
     //arr.splice(2,0,45,56,67)
     //arr.splice(2,2)
@@ -37,25 +37,16 @@ const UsememoExample = () => {
         <Col className='bg-primary'>
             <h6>Counter is :{count}</h6>
             <button onClick={addCounter} className='bg-warning'>Add</button>
-            {/* Calculation : {calc} */}
+             {/* Calculation : {calc} */}
             
 
         </Col>
         <Col className='bg-success'>
-            <h4>Task List</h4>
-            {
-                data.map((i,index)=>{
-                    return (
-                        <>
-                            <p key={index}>{i} <i class="bi bi-pencil-square"></i> <i class="bi bi-trash"></i></p>
-                            
-                        </> 
-                    )
-                })
-            }
+            <h4>Task List</h4>      
             <input type='text' name="task" value={task} onChange={(e)=>setTask(e.target.value)}/>
             <br /><br />
-            <button onClick={addTask} className='bg-secondary'>Add Task</button>
+            <TaskComponent key={data.length} data={data} addTask={addTask}/>     
+           
             <br /><br />
         </Col>
       </Row>     
