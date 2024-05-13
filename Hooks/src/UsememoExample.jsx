@@ -10,13 +10,14 @@ const UsememoExample = () => {
     const [count,setCount] = useState(0)   
     const [task,setTask] = useState("")
     const [data,setData] = useState([])
-    // const calcFunction = ({count})=>{
-    //     for(let i=0;i<1000000000;i++){
-    //         count+=1;
-    //     }
-    //     return count;
-    // }
-    // const calc = useMemo(()=>calcFunction({count}))
+    const calcFunction = (count)=>{
+        console.log("Calculation perform....");
+        for(let i=0;i<1000000000;i++){
+            count +=1;
+        }
+        return count;
+    }
+    const calc = useMemo(()=>calcFunction(count),[count])
     const addCounter = ()=>{
         console.log("counter func called..");
         setCount(count+1)
@@ -48,6 +49,11 @@ const UsememoExample = () => {
             <TaskComponent key={data.length} data={data} addTask={addTask}/>     
            
             <br /><br />
+
+        </Col>
+        <Col>
+            <h4>Expensive Calc Function</h4>
+                {calc}
         </Col>
       </Row>     
     </Container>
