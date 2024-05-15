@@ -1,6 +1,17 @@
-import React, { memo } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 
-const TaskComponent = ({data,addTask}) => {
+const TaskComponent = ({data,addTask,deleteTask,editTask,id,updateTask}) => {
+
+  // const [newData,setNewData] = useState([])
+ 
+ 
+  // useEffect(()=>{
+  //   console.log('use effect calling');
+  //   setTimeout(()=>{
+  //     setNewData(data)
+  //   },5000)
+  // },[])
+  
   return (
     <>
     <div>
@@ -9,12 +20,15 @@ const TaskComponent = ({data,addTask}) => {
                 data.map((i,index)=>{
                     return (
                         <>
-                            <p key={index}>{i} <i className="bi bi-pencil-square"></i> <i className="bi bi-trash"></i></p>                           
+                            <p key={index}>{i} 
+                            <button onClick={()=>editTask(index)}><i className="bi bi-pencil-square"></i> </button>
+                            <button onClick={()=>deleteTask(index)}><i className="bi bi-trash"></i></button></p>                           
                         </> 
                     )
                 })
             }
-            <button onClick={addTask} className='bg-secondary'>Add Task</button>
+            <button onClick={id ? updateTask:addTask} className='bg-secondary'>{ id ? "Update" : "Add"} Task</button>
+            
     </div>
     </>
   )

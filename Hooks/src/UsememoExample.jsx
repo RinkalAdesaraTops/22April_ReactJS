@@ -9,6 +9,7 @@ import TaskComponent from './TaskComponent';
 const UsememoExample = () => {
     const [count,setCount] = useState(0)   
     const [task,setTask] = useState("")
+    const [id,setId] = useState("")
     const [data,setData] = useState([])
     const calcFunction = (count)=>{
         console.log("Calculation perform....");
@@ -23,14 +24,39 @@ const UsememoExample = () => {
         setCount(count+1)
     }
     const addTask = useCallback(()=>{
+      console.log(id);
         setData((i)=>[...i,task])
         //setData((i)=>[...i,"task added"])
         setTask('')
     },[task])
-    //arr = [1,2,3,4,5,6,78]
-    //arr.splice(2,0,45,56,67)
-    //arr.splice(2,2)
-    //arr.slice(-3,-6)
+   
+    const deleteTask = useCallback((id)=>{
+      let data1 = data.filter((i,index)=>{
+            return index!=id;
+          })
+         setData(data1) 
+    })
+   
+    const editTask = (id)=>{
+      let data1 = data.filter((i,index)=>{
+        return index==id;
+      })
+      setTask(data1[0])
+      setId(id)
+    }
+    const updateTask = ()=>{
+      console.log("update func calling..");
+      let data1 = data.map((i,index)=>{
+        console.log("id is "+id);
+        console.log("task is "+task);
+        if(index == id){
+          i = task
+        }
+        return i;
+      })
+      setData(data1)
+      setId("")
+    }
   return (
     <>
     <Container>
@@ -46,7 +72,7 @@ const UsememoExample = () => {
             <h4>Task List</h4>      
             <input type='text' name="task" value={task} onChange={(e)=>setTask(e.target.value)}/>
             <br /><br />
-            <TaskComponent key={data.length} data={data} addTask={addTask}/>     
+            <TaskComponent key={data.length} id={id} data={data} addTask={addTask} deleteTask={deleteTask} editTask={editTask} updateTask={updateTask}/>     
            
             <br /><br />
 
