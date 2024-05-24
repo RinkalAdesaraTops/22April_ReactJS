@@ -10,11 +10,13 @@ import LazyloadingComponent from './LazyloadingComponent';
 import TaskComponent from './TaskComponent';
 import LocalstorageExample from './LocalstorageExample';
 import CrudLocalStorage from './CrudLocalStorage';
+import { UseFetch } from './UseFetch';
 
 function App() {
   const [count, setCount] = useState(0)
   //USE REF Hook Example
   let a = useRef(0)
+  let dataHook = UseFetch("dfghdf")
   useEffect(()=>{
     console.log("Rerender calling...");
     a.current = a.current+5;
