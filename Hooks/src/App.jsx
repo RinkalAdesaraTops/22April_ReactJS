@@ -9,6 +9,7 @@ import UseCallback from './UseCallback';
 import LazyloadingComponent from './LazyloadingComponent';
 import TaskComponent from './TaskComponent';
 import LocalstorageExample from './LocalstorageExample';
+import CrudLocalStorage from './CrudLocalStorage';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -34,8 +35,9 @@ function App() {
       {/* <ContextExample /> */}
       {/* <UseContextDemo /> */}
       {/* <UsememoExample />      */}
-      <LocalstorageExample />
+      {/* <LocalstorageExample /> */}
       {/* <LazyloadingComponent /> */}
+      <CrudLocalStorage />
       
     </>
   )
