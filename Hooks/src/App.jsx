@@ -10,6 +10,7 @@ import LazyloadingComponent from './LazyloadingComponent';
 import TaskComponent from './TaskComponent';
 import LocalstorageExample from './LocalstorageExample';
 import CrudLocalStorage from './CrudLocalStorage';
+import Apicomponent from './Apicomponent';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -37,7 +38,8 @@ function App() {
       {/* <UsememoExample />      */}
       {/* <LocalstorageExample /> */}
       {/* <LazyloadingComponent /> */}
-      <CrudLocalStorage />
+      {/* <CrudLocalStorage /> */}
+      <Apicomponent />
       
     </>
   )
