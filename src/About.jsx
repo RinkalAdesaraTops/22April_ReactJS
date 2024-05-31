@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 
 export const About = () => {
   const navigate = useNavigate()
@@ -32,12 +32,15 @@ export const About = () => {
   }
   return (
     <>
+    <Outlet />
     <div>About Us Page</div>
+    
     <Button className='btn btn-primary'>Click</Button>
     <ul>
       {listArr}
     </ul>
     <button onClick={prevPage}>Back</button>
+    {/* <Outlet /> */}
     </>
   )
 }

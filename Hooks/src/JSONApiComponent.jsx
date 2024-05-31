@@ -25,7 +25,6 @@ const JSONApiComponent = () => {
         axios.post('http://localhost:8000/users',data)
         .then((res)=>console.log(res))
         .catch((err)=> console.log(err))
-
     }
     const delData = (id)=>{
         axios.delete('http://localhost:8000/users/'+id)
@@ -56,7 +55,6 @@ const JSONApiComponent = () => {
         Age: <input type="text" name="age" id="" value={data.age} onChange={handleChange}/><br /><br />
         <input type="submit" value="Save Data" />
         </form>
-
         <table>
             <tr>
                 <td>Id</td>
