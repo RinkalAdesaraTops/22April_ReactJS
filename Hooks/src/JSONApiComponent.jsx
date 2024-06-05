@@ -7,10 +7,17 @@ const JSONApiComponent = () => {
         age:""
     })
     const [userData,setUserData] = useState([])
+    const [allUsers,setAllUsers] = useState([])
+    // let allUsers = []
+    const [search,setSearch] = useState("")
     const [id,setId] = useState("")
     useEffect(()=>{
         axios.get('http://localhost:8000/users')
-        .then((res)=>setUserData(res.data))
+        .then((res)=>{
+            setUserData(res.data)
+            setAllUsers(res.data)
+            
+        })
         .catch((err)=> console.log(err))
     },[data])
     const handleChange = (e)=>{
@@ -47,6 +54,21 @@ const JSONApiComponent = () => {
         .catch((err)=> console.log(err))
 
     }
+    const searchName = (e)=>{
+        setSearch(e.target.value)
+        console.log(search);
+        // console.log(allUsers);
+        if(search != ''){
+            let data1 = allUsers.filter((i)=>{
+                    if(i.name.includes(search)){
+                        return i;
+                    }
+            })
+            setUserData(data1)
+        } else {
+            setUserData(allUsers)
+        }
+    }
   return (
     <div>
       <h3>JSON Server Api Example</h3>
@@ -55,6 +77,8 @@ const JSONApiComponent = () => {
         Age: <input type="text" name="age" id="" value={data.age} onChange={handleChange}/><br /><br />
         <input type="submit" value="Save Data" />
         </form>
+        <br />
+        <input type="search" name="search" id="" placeholder='Search by Name' onKeyUp={searchName} />
         <table>
             <tr>
                 <td>Id</td>

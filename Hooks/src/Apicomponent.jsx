@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import axios from 'axios'
 
 const Apicomponent = () => {
@@ -10,6 +10,22 @@ const Apicomponent = () => {
         category:""
     })
     const [userData,setUserData] = useState([])
+    const [catData,setCatData] = useState([])
+    useEffect(()=>{
+        axios.get('https://fakestoreapi.com/products')
+        .then((res)=>{
+            console.log(res)
+            setUserData(res.data)
+        })
+        .catch((err)=> console.log(err))
+
+        axios.get('https://fakestoreapi.com/products/categories')
+        .then((res)=>{
+            console.log(res)
+            setCatData(res.data)
+        })
+        .catch((err)=> console.log(err))
+    })
     const handleChange = (e)=>{
         const {name,value} = e.target
         setData({
@@ -57,7 +73,15 @@ const Apicomponent = () => {
       </form>
 
       <button onClick={dispProduct}>All Products</button>
-      <table>
+      <select name='category'>
+            <option>--Select Category--</option>
+            {
+                catData && catData.map((i)=>{
+                    return (<option>{i}</option>)
+                })
+            }
+      </select>
+      <table border={'2'}>
         <tr>
             <td>Id</td>
             <td>Title</td>
