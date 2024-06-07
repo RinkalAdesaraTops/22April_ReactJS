@@ -51,7 +51,6 @@ const JSONApiComponent = () => {
         axios.put('http://localhost:8000/users/'+id,data)
         .then((res)=>console.log(res))
         .catch((err)=> console.log(err))
-
     }
     const searchName = (e)=>{
         console.log(e.target.value);
