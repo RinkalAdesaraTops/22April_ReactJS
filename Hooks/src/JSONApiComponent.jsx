@@ -9,7 +9,6 @@ const JSONApiComponent = () => {
     const [userData,setUserData] = useState([])
     const [allUsers,setAllUsers] = useState([])
     // let allUsers = []
-    const [search,setSearch] = useState("")
     const [id,setId] = useState("")
     useEffect(()=>{
         axios.get('http://localhost:8000/users')
@@ -55,12 +54,10 @@ const JSONApiComponent = () => {
 
     }
     const searchName = (e)=>{
-        setSearch(e.target.value)
-        console.log(search);
-        // console.log(allUsers);
-        if(search != ''){
+        console.log(e.target.value);
+        if(e.target.value !== ''){
             let data1 = allUsers.filter((i)=>{
-                    if(i.name.includes(search)){
+                    if(i.name.includes(e.target.value)){
                         return i;
                     }
             })
