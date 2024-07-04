@@ -2,6 +2,7 @@ export const INSERT = 'INSERT';
 export const DISPLAY = 'DISPLAY';
 export const DELETE = 'DELETE';
 export const UPDATE = 'UPDATE';
+export const EDIT = 'EDIT';
 
 export const insert = (data)=>{
     return {
@@ -14,6 +15,7 @@ export const display = ()=>{
         type:DISPLAY        
     }
 }
+
 export const deleteData = (id)=>{
     return {
         type:DELETE,
