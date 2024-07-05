@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { EDIT, INSERT, UPDATE, display, edit, insert, update } from '../redux/actions';
+import {  insert,deleteData, update } from '../redux/actions';
 
 const UserCRudComponent = () => {
 
@@ -29,23 +29,27 @@ const UserCRudComponent = () => {
           age:''
         })
     }
-    const editData = (item)=>{
-      setUserData(item)
+    const editData = (data)=>{
+      setUserData(data)
     }
     const updateData = (e)=>{
       e.preventDefault();
-      console.log(userData);
       dispatch(update(userData.id,userData))
+      setUserData({
+          id:'',
+          name:'',
+          age:''
+      })
     }
   return (
     <div>
       <h3>User CRUD Example</h3>
-      <form action='#' method='post' onSubmit={userData.id!= '' ?updateData:saveData}>
+      <form action='#' method='post' onSubmit={userData.id !='' ?updateData :saveData}>
         Name: 
         <input type="text" name="name" id="" value={userData.name} onChange={handleChange}/>
         Age: 
         <input type="number" name="age" id="" value={userData.age} onChange={handleChange}/>
-        <input type="submit" value={userData.id!='' ? "Update Data" : "Save Data"}/>
+        <input type="submit" value={ userData.id != ''?"Update Data":"Save Data"}/>
       </form>
       <table>
         <tr>
@@ -61,8 +65,9 @@ const UserCRudComponent = () => {
                         <td>{i.id}</td>
                         <td>{i.name}</td>
                         <td>{i.age}</td>
-                        <td><button onClick={()=>editData(i)}>Edit</button></td>
-                        <td><button>Delete</button></td>
+                        <td><button onClick={()=>editData(i)}>Edit</button>
+                        </td>
+                        <td><button onClick={()=>dispatch(deleteData(i.id))}>Delete</button></td>
 
                     </tr>
                     </>

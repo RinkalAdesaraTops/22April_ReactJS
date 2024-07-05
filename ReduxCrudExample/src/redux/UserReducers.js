@@ -1,4 +1,4 @@
-import { DELETE, EDIT, INSERT, UPDATE } from "./actions"
+import { DELETE, INSERT, UPDATE} from "./actions"
 
 const initialState = {
     data:[],
@@ -11,19 +11,26 @@ const UserReducers = (state=initialState,action) => {
         ...state,
         data:[...state.data,action.payload]
     }
-    case UPDATE: return {
-      ...state,
-      data:state.data.map((i)=>{
-        return i.id==action.payload.id ? action.payload.data : i
-      })
-  }
-  
+    
     case DELETE: return {
         ...state,
         data:state.data.filter((i)=>{
             return i.id != action.payload
         })
     } 
+    case UPDATE: return {
+      ...state,
+      data:state.data.map((i)=> {
+          return (i.id == action.payload.id)?action.payload.data:i
+      })
+      // data:state.data.map((i)=> (i.id == action.payload.id)?action.payload.data:i)
+          // if(i.id == action.payload.id){
+          //   return action.payload.data
+          // } else {
+          //   return i;
+          // }
+      // })
+    }
     
     default: return state
   }
