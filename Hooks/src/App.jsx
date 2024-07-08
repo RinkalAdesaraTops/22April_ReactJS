@@ -12,6 +12,7 @@ import LocalstorageExample from './LocalstorageExample';
 import CrudLocalStorage from './CrudLocalStorage';
 import Apicomponent from './Apicomponent';
 import JSONApiComponent from './JSONApiComponent';
+import CounterComponent from './CounterComponent';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -42,7 +43,8 @@ function App() {
       {/* <LazyloadingComponent /> */}
       {/* <CrudLocalStorage /> */}
       {/* <Apicomponent /> */}
-      <JSONApiComponent />
+      {/* <JSONApiComponent /> */}
+      <CounterComponent />
     </>
   )
 }
