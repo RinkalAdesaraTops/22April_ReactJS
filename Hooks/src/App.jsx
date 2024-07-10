@@ -13,18 +13,19 @@ import CrudLocalStorage from './CrudLocalStorage';
 import Apicomponent from './Apicomponent';
 import JSONApiComponent from './JSONApiComponent';
 import CounterComponent from './CounterComponent';
+import Thunkcomponent from './Reduxthunk/Thunkcomponent';
 
 function App() {
-  const [count, setCount] = useState(0)
-  //USE REF Hook Example
-  let a = useRef(0)
-  // let dataHook = UseFetch("dfghdf")
-  useEffect(()=>{
-    console.log("Rerender calling...");
-    a.current = a.current+5;
-    console.log(a);
-    console.log("a is "+a.current);
-  })
+  // const [count, setCount] = useState(0)
+  // //USE REF Hook Example
+  // let a = useRef(0)
+  // // let dataHook = UseFetch("dfghdf")
+  // useEffect(()=>{
+  //   console.log("Rerender calling...");
+  //   a.current = a.current+5;
+  //   console.log(a);
+  //   console.log("a is "+a.current);
+  // })
   return (
     <>      
       <h1>React Hooks Example</h1>
@@ -44,7 +45,8 @@ function App() {
       {/* <CrudLocalStorage /> */}
       {/* <Apicomponent /> */}
       {/* <JSONApiComponent /> */}
-      <CounterComponent />
+      {/* <CounterComponent /> */}
+      <Thunkcomponent />
     </>
   )
 }
